@@ -1,6 +1,6 @@
 # GSE Math Camp: Summer 2019
 
-## Tentative Schedule:
+## Tentative Schedule
 
 Week 1:
 1. Introduction to Quantitative Education Research, Software Packages, Precalculus, Limits
