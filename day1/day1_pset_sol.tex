@@ -1,0 +1,182 @@
+% ----------------------------------------------------------------
+% Article Class (This is a LaTeX2e document)  ********************
+% ----------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsthm, amssymb}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{enumerate}
+
+%Candelaria's favorite packages
+\usepackage{setspace}	% Set the spacing for the document
+\usepackage{xtab}		% Use for tables
+\usepackage{comment}	% Use for block comments
+\usepackage{rotating}	% Helpful for rotating figures
+\usepackage{lscape}	% Change a page into landscape
+\usepackage{hyperref}
+\hypersetup{colorlinks=false,pdfborder={0 0 0},breaklinks=true}
+\usepackage{graphicx}	% Load a graphic image
+%\usepackage{url}		% Use for formatting URLS (nice for NatBib also)
+\usepackage{booktabs}  	% Use for nice tables/ Works well with ESTOUT
+\usepackage{longtable} 	% Used to break long tables over multiple pages
+\usepackage{caption}
+\usepackage{subcaption} 	% Used to create SubFloats
+\usepackage{listings} 	% Use to enter code blocks, like a fancy verbatim
+
+% ADD COLOR:
+\usepackage{color}
+\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+
+% Packages for the bibliography
+\usepackage[longnamesfirst]{natbib}
+%\usepackage{natbib}
+
+% Set Page Margins
+%\usepackage{fullpage}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Set line and table spacing
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand{\arraystretch}{1.1}
+\setlength\abovedisplayskip{0pt}
+\setlength\belowdisplayskip{0pt}
+
+% Redefine the cite command
+\renewcommand\cite{\citet}
+
+%\setlength{\parindent}{0in}
+
+%\setlength{\leftmargin}{0pt} \setlength{\parskip}{1.1ex} \setlength{\parindent}{1em} \setlength{\itemsep}{0pt} \setlength{\footnotesep}{10pt}
+%\renewcommand{\footnoterule}{\rule{3in}{.3pt}\vspace{-.3pt}}
+
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+%\numberwithin{equation}{section} %Number equations within section
+% ----------------------------------------------------------------
+
+% AUTHOR INFO
+
+
+\title{Problem Set 1\\ Due: September 4, 2019}%
+
+% ----------------------------------------------------------------
+
+%%%%%%
+% SHORT CITES
+%%%%%%
+\shortcites{ColEtAl1966}
+
+
+\begin{document}
+
+\begin{center}
+{\huge Problem Set 1: Pre-Calculus}\\[5pt]
+Due: September 4, 2019
+{\Large SOLUTIONS}
+\end{center}
+
+\section*{Problem 1}
+Solve for x:
+\begin{enumerate}
+\item $4x + 5 = 17$ \\
+{\color{red} $x=12$}
+
+\item $13 - 3x = 27x - 2$\\
+{\color{red} $x = \frac{1}{2}$}
+\item $0 = x^2 - x - 6$\\
+{\color{red} Use the Quadratic Formula with $a=1, b=-1, c=-6$:
+$$ x = \frac{-(-1) \pm \sqrt{(-1)^2 - 4(1)(-6)}}{2(1)}$$
+$$ x = \frac{1 \pm \sqrt{25}}{2}$$
+$$ x = \{-2,3\}$$}
+
+\item $x^2 = 36$
+{\color{red} $$ x = \pm 6$$}
+\\[5pt]
+\end{enumerate}t
+
+\section*{Problem 2}
+\begin{enumerate}
+\item Find the equation of the line that passes through (9,3) and (4,5).
+{\color{red} $$ m= \frac{5-3}{4-9} = -\frac{2}{5}$$
+Use point-slope form:
+$$ y - 5 = -\frac{2}{5}(x-4)$$
+$$ y = -\frac{2}{5}x + \frac{33}{5}$$}
+\item Do the lines $y=x$ and $y=x^2+3$ intersect?  If so, where? \\
+{\color{red} No. Plotting both curves in Desmos (or similar) will show this quickly. Alternately, you could set the curves equal to each other:
+$$ x = x^2 +3 $$
+Rearrange:
+$$ 0 = x^2 -x +3 $$
+And then using the quadratic formula will provide no real roots, therefore there are no real values of $x$ where the two curves share the same $y$ value.}
+\item Find the distance between $(1,2)$ and $(-4,-3)$.
+{\color{red} Use the distance formula:
+$$ d = \sqrt{(-4-1)^2 + (-3-2)^2}$$
+$$ d = \sqrt{50}$$}
+
+\item For the function $f(x) = 3x - x^2$, evaluate $f(-2)$.
+{\color{red} $$f(-2) = 3(-2) - (-2)^2 = -6-4 = -10$$}
+
+\item Plot the polynomial $y = -3 + 2x^2$. For what values of x is this function increasing? Decreasing?\\[5pt]
+{\color{red} This function is decreasing on the interval $(-\infty, 0)$ and increasing on the interval $(0,\infty)$}
+\end{enumerate}
+
+\section*{Problem 3}
+Evaluate:
+\begin{enumerate}
+\item $$\sum_{x=1}^{5}x^2-x$$
+{\color{red} $$0 + 2 + 6 + 12 + 20 = 40 $$}
+\item $$\sum_{x=0}^{10}(-1)^{x} (3x + 2) $$
+{\color{red} $$2 - 5 + 8 - 11 +14 - 17 + 20 -23 +26 - 29 + 32 = 17$$}
+\item $$\sum_{x=1}^{5} 5$$
+{\color{red} $$ 5 + 5+5+5+5 = 25$$}
+\item $$\prod_{x=0}^{5}3x^3-x$$
+{\color{red} $$0\times \cdots = 0$$}
+\item $$\prod_{x=1}^{3}(-1)^{x} (x - 2x^2) $$
+{\color{red} $$1 \times -6 \times 15 = -90 $$}
+\item $$\prod_{x=1}^{5} 5$$
+{\color{red} $$5\times5\times5\times5\times5 = 5^5 = 3125$$}
+
+\end{enumerate}
+
+\section*{Problem 4}
+Explain in your own words what is meant by the equation
+\[\lim_{x\to 2} f(x) = 5\]
+Is it possible for this statement to be true and yet have $f(2) = 3$? Explain.\\[5pt]
+
+{\color{red} As $x$ gets closer and closer to $2$, the value of $f(x)$ gets closer and closer to $5$. This can be true even if $f(2) =3$. As we saw in class, if there is a ``hole'' in the function at $x=2$, the limit can still exist even if the value of the function at that point is different.}
+
+\section*{Problem 5}
+The \textbf{greatest} integer function is defined by $\lfloor x \rfloor=$ the largest integer that is less than or equal to $x$. (For instance, $\lfloor 4 \rfloor=4$, $\lfloor 4.8 \rfloor=4$, $\lfloor \pi \rfloor=3$, $\lfloor \sqrt{2} \rfloor=1$, $\lfloor -\frac{1}{2} \rfloor= -1.)$ Show that $\lim_{x \to 3} \lfloor x \rfloor $ does not exist. Hint: You may want to draw a graph. \\[5pt]
+Sidenote: The greatest integer function is also called the \em floor \em function - it just rounds down to the nearest integer. Contrast this with the \em ceiling \em function, which just rounds up to the nearest integer. 
+
+{\color{red} Graphing the function shows that:
+$$\lim_{x\to3^-}\lfloor x \rfloor = 2$$
+While
+$$\lim_{x\to3^+}\lfloor x \rfloor = 3$$
+Because
+$$\lim_{x\to3^-}\lfloor x \rfloor \neq \lim_{x\to3^+}\lfloor x \rfloor$$
+We conclude that $\lim_{x\to3} \lfloor x \rfloor$ does not exist.
+
+}
+
+\section*{Bonus}
+Solve for $n$:
+$$\sum_{x=1}^{n} (5x^2 -7x + 1) = 7871 $$
+
+
+\end{document}
+
+
+
