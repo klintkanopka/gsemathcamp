@@ -1,0 +1,126 @@
+% ----------------------------------------------------------------
+% Article Class (This is a LaTeX2e document)  ********************
+% ----------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsthm, amssymb}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc} 
+\usepackage{multicol}
+
+%Candelaria's favorite packages
+\usepackage{setspace}	% Set the spacing for the document
+\usepackage{xtab}		% Use for tables
+\usepackage{comment}	% Use for block comments
+\usepackage{rotating}	% Helpful for rotating figures
+\usepackage{lscape}	% Change a page into landscape
+\usepackage{hyperref}
+\hypersetup{colorlinks=false,pdfborder={0 0 0},breaklinks=true}
+\usepackage{graphicx}	% Load a graphic image
+%\usepackage{url}		% Use for formatting URLS (nice for NatBib also)
+\usepackage{booktabs}  	% Use for nice tables/ Works well with ESTOUT
+\usepackage{longtable} 	% Used to break long tables over multiple pages
+\usepackage{caption}
+\usepackage{subcaption} 	% Used to create SubFloats
+\usepackage{listings} 	% Use to enter code blocks, like a fancy verbatim
+
+% ADD COLOR:
+\usepackage{color}
+\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+
+% Packages for the bibliography
+\usepackage[longnamesfirst]{natbib}
+%\usepackage{natbib}
+
+% Set Page Margins
+%\usepackage{fullpage}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Set line and table spacing
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand{\arraystretch}{1.1}
+\setlength\abovedisplayskip{0pt}
+\setlength\belowdisplayskip{0pt}
+
+% Redefine the cite command
+\renewcommand\cite{\citet}
+
+%\setlength{\parindent}{0in}
+
+%\setlength{\leftmargin}{0pt} \setlength{\parskip}{1.1ex} \setlength{\parindent}{1em} \setlength{\itemsep}{0pt} \setlength{\footnotesep}{10pt}
+%\renewcommand{\footnoterule}{\rule{3in}{.3pt}\vspace{-.3pt}}
+
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+%\numberwithin{equation}{section} %Number equations within section
+% ----------------------------------------------------------------
+
+% AUTHOR INFO
+
+
+\title{Problem Set 7\\ Due: TBD}%
+
+% ----------------------------------------------------------------
+
+%%%%%%
+% SHORT CITES
+%%%%%%
+\shortcites{ColEtAl1966}
+
+
+\begin{document}
+
+\begin{center}
+{\huge Problem Set 3: Linear Algebra}\\[5pt]
+Due: September 6, 2019
+\end{center}
+
+\section*{Problem 1}
+Write each of the following systems of equations as an augmented matrix and a matrix equation.
+\begin{enumerate}
+\item
+$
+-x_1 + x_2 = 4 \\
+4x_1 + 3x_2 = -9 
+$
+
+\item
+$
+x_1 + x_2 + x_3 = 6 \\
+2x_2 + 5x_3 = -4 \\
+2x_1 + 5x_2 -x_3 = 27 \\
+$
+
+\item
+$
+x_1 + x_2 + x_3 + x_4 = 9 \\
+-3x_1 + 7x_2 + 2x_3 + 4x_4 = 27 \\
+3x_2 - 4x_3 + 2x_4 = 10 \\
+8x_1 - 6x_2 - x_4 = 1 \\
+$
+
+
+\end{enumerate}
+
+\section*{Problem 2}
+Solve the systems of equations in 1 and 2 from Problem 1 using row operations on the augmented matrices you wrote.
+
+\section*{Bonus}
+Solve the system of equations in 3 from Problem 1 using row operations on the augmented matrix you wrote.
+
+\end{document}
+
