@@ -1,0 +1,262 @@
+% ----------------------------------------------------------------
+% Article Class (This is a LaTeX2e document)  ********************
+% ----------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsthm, amssymb}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc} 
+\usepackage{multicol}
+
+%Candelaria's favorite packages
+\usepackage{setspace}	% Set the spacing for the document
+\usepackage{xtab}		% Use for tables
+\usepackage{comment}	% Use for block comments
+\usepackage{rotating}	% Helpful for rotating figures
+\usepackage{lscape}	% Change a page into landscape
+\usepackage{hyperref}
+\hypersetup{colorlinks=false,pdfborder={0 0 0},breaklinks=true}
+\usepackage{graphicx}	% Load a graphic image
+%\usepackage{url}		% Use for formatting URLS (nice for NatBib also)
+\usepackage{booktabs}  	% Use for nice tables/ Works well with ESTOUT
+\usepackage{longtable} 	% Used to break long tables over multiple pages
+\usepackage{caption}
+\usepackage{subcaption} 	% Used to create SubFloats
+\usepackage{listings} 	% Use to enter code blocks, like a fancy verbatim
+
+% ADD COLOR:
+\usepackage{color}
+\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+
+% Packages for the bibliography
+\usepackage[longnamesfirst]{natbib}
+%\usepackage{natbib}
+
+% Set Page Margins
+%\usepackage{fullpage}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Set line and table spacing
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand{\arraystretch}{1.1}
+\setlength\abovedisplayskip{0pt}
+\setlength\belowdisplayskip{0pt}
+
+% Redefine the cite command
+\renewcommand\cite{\citet}
+
+%\setlength{\parindent}{0in}
+
+%\setlength{\leftmargin}{0pt} \setlength{\parskip}{1.1ex} \setlength{\parindent}{1em} \setlength{\itemsep}{0pt} \setlength{\footnotesep}{10pt}
+%\renewcommand{\footnoterule}{\rule{3in}{.3pt}\vspace{-.3pt}}
+
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+%\numberwithin{equation}{section} %Number equations within section
+% ----------------------------------------------------------------
+
+% AUTHOR INFO
+
+
+\title{Problem Set 7\\ Due: TBD}%
+
+% ----------------------------------------------------------------
+
+%%%%%%
+% SHORT CITES
+%%%%%%
+\shortcites{ColEtAl1966}
+
+
+\begin{document}
+
+\begin{center}
+{\huge Problem Set 3: Linear Algebra}\\[5pt]
+Due: September 6, 2019
+\end{center}
+
+\section*{Problem 1}
+Write each of the following systems of equations as an augmented matrix and a matrix equation.
+\begin{enumerate}
+\item
+$
+-x_1 + x_2 = 4 \\
+4x_1 + 3x_2 = -9 
+$
+
+{\color{red}
+$$ \begin{bmatrix}-1 & 1 \\ 4 & 3 \end{bmatrix} \begin{bmatrix}x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 4 \\ -9 \end{bmatrix}$$
+$$ \begin{bmatrix} 
+    -1 & 1 & 4 \\ 
+     4 & 3 & -9 
+    \end{bmatrix} $$
+}
+
+\item
+$
+x_1 + x_2 + x_3 = 6 \\
+2x_2 + 5x_3 = -4 \\
+2x_1 + 5x_2 -x_3 = 27 \\
+$
+
+{\color{red}
+$$ \begin{bmatrix} 1 & 1 & 1 \\ 0 & 2 & 5 \\ 2 & 5 & -1 \end{bmatrix} \begin{bmatrix}x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 6 \\ -4 \\ 27 \end{bmatrix}$$
+$$ \begin{bmatrix} 
+     1 & 1 &  1 &  6 \\ 
+     0 & 2 &  5 & -4 \\
+     2 & 5 & -1 & 27
+    \end{bmatrix} $$
+}
+
+\item
+$
+x_1 + x_2 + x_3 + x_4 = 9 \\
+-3x_1 + 7x_2 + 2x_3 + 4x_4 = 27 \\
+3x_2 - 4x_3 + 2x_4 = 10 \\
+8x_1 - 6x_2 - x_4 = 1 \\
+$
+
+{\color{red}
+$$ \begin{bmatrix} 
+      1 & 1 &  1 & 1 \\ 
+     -3 & 7 &  2 & 4 \\
+      0 & 3 & -4 & 2 \\
+      8 & -6 & 0 & -1
+    \end{bmatrix}
+    \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} =
+    \begin{bmatrix} 9 \\ 27 \\ 10 \\ 1 \end{bmatrix}$$
+$$ \begin{bmatrix} 
+      1 & 1 &  1 & 1 &  9 \\ 
+     -3 & 7 &  2 & 4 & 27 \\
+      0 & 3 & -4 & 2 & 10 \\
+      8 & -6 & 0 & -1 & 1
+    \end{bmatrix} $$
+}
+
+\end{enumerate}
+
+\section*{Problem 2}
+Solve the systems of equations in 1 and 2 from Problem 1 using row operations on the augmented matrices you wrote.
+
+{\color{red}
+\begin{enumerate}
+\item
+$$ \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} -3 \\ 1 \end{bmatrix} $$
+\item
+$$ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 5 \\ 3 \\ -2 \end{bmatrix} $$
+\end{enumerate}
+}
+
+\newpage
+
+\section*{Bonus Solutions}
+\subsection*{Tuesday Bonus}
+Solve for $n$:
+$$\sum_{x=1}^{n} (5x^2 -7x + 1) = 7871 $$
+
+{\color{red} Originally, I wrote and solved this problem by using a spreadsheet to compute and sum successive terms. Recognizing fully that this is an entirely unsatisfying approach, I tried this:\\
+
+First, break apart the sum as so:
+$$5\sum^n_{x=1}x^2 -7\sum_{x=1}^n x + \sum_{x=1}^n 1 = 7871$$
+
+Next, recognize that:
+$$\sum_{x=1}^n 1 = n$$
+$$\sum_{x=1}^n x = \frac{n(n+1)}{2} = \frac{1}{2}(n^2+n)$$
+$$\sum_{x=1}^n x^2 = \frac{n(n+1)(2n+1)}{6} = \frac{1}{6}(2n^3+3n^2+n)$$
+
+Substituting back into our original expression:
+
+$$\frac{5}{6} (2n^3+3n^2+n)-\frac{7}{2}(n^2 + n) + n = 7871$$
+``Simplify:''
+$$5(2n^3+3n^2+n)-21(n^2 + n) + 6n = 47226$$
+$$10n^3+15n^2+5n-21n^2 -21n + 6n = 47226$$
+$$ 10n^3-6n^2-10n-47226 = 0$$
+
+There are methods for solving cubic equations, but they are time consuming, so we'll plot the function and look for roots. Plotting $f(n)= 10n^3-6n^2-10n-47226$ shows that it has precisely one real root, located at $n=17$. Hopefully this was more satisfying.
+}
+
+\newpage
+
+\subsection*{Wednesday Bonus}
+A piece of wire 40 inches long is cut into two pieces.  One is bent into a circle and the other is bent into a square.  How should the pieces be cut to \em minimize \em the total area of the two shapes?
+
+{\color{red} 
+Start by defining the function you're trying to minimize:
+$$A_{total} = A_{square} + A_{circle}$$
+Recognize that:
+$$A_{square} = s^2$$
+$$A_{circle} = \pi r^2$$
+Therefore:
+$$A_{total} = s^2 + \pi r^2$$
+
+From the wording of the problem, we know the total piece of wire is 40 in, so the sum of the perimeter of the square and the circumference of the circle must be 40:
+
+$$ 40 = P_{square} + C_{circle}$$
+$$ P_{square} = 40 - C_{circle}$$
+
+We also know the relationship between the perimeter of a square and its side length, as well as the circumference of a circle and its radius:
+
+$$P_{square} = 4s$$
+$$C_{circle} = 2\pi r$$
+
+We can solve each of those relationships for the side length and the radius, respectively, and write them in terms of $C_{circle}$:
+$$ s = \frac{P_{square}}{4} = \frac{40-C_{circle}}{4}$$
+$$ r = \frac{C_{circle}}{2\pi}$$
+
+Substituting into our expression for $A_{total}$:
+
+$$A_{total}= \pi\bigg(\frac{C_{circle}}{2\pi}\bigg)^2 + \bigg(\frac{40-C_{circle}}{4}\bigg)^2$$
+
+Next we take the derivative of $A_{total}$ with respect to $C_{circle}$:
+
+$$\frac{dA_{total}}{dC_{circle}} = 2\pi \bigg(\frac{C_{circle}}{2\pi}\bigg)\bigg(\frac{1}{2\pi}\bigg) 
+    + 2\bigg( \frac{40-C_{circle}}{4}\bigg)\bigg(-\frac{1}{4}\bigg)$$
+
+Set this derivative equal to zero and simplify:
+
+
+$$2\pi \bigg(\frac{C_{circle}}{2\pi}\bigg)\bigg(\frac{1}{2\pi}\bigg) 
+    + 2\bigg( \frac{40-C_{circle}}{4}\bigg)\bigg(-\frac{1}{4}\bigg) = 0 $$
+
+$$\frac{C_{circle}}{2\pi} - \frac{40-C_{circle}}{8} = 0 $$
+$$\frac{C_{circle}}{2\pi} = \frac{40-C_{circle}}{8}$$
+$$8C_{circle} = 80\pi - 2\pi C_{circle}$$
+$$4C_{circle} = 40\pi - \pi C_{circle}$$
+$$4C_{circle}+ \pi C_{circle}= 40\pi $$
+$$(4+ \pi) C_{circle}= 40\pi $$
+$$C_{circle}= \frac{40\pi}{4+\pi} \approx 17.6$$
+$$P_{square} = 40 - C_{circle} = \frac{160}{4+\pi} \approx 22.4$$
+
+You should cut the 40 in wire into a piece 17.6 in long (to be used for the circle) and a piece 22.4 in long (to be used for the square).
+
+}
+
+\newpage
+
+\subsection*{Thursday Bonus}
+Solve the system of equations in 3 from Problem 1 using row operations on the augmented matrix you wrote.
+$$x_1 + x_2 + x_3 + x_4 = 9$$
+$$-3x_1 + 7x_2 + 2x_3 + 4x_4 = 27$$
+$$3x_2 - 4x_3 + 2x_4 = 10$$
+$$8x_1 - 6x_2 - x_4 = 1$$
+
+{\color{red}
+$$ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 1 \\7 \end{bmatrix} $$
+}
+
+\end{document}
+

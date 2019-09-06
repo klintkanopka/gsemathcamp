@@ -1,0 +1,118 @@
+% ----------------------------------------------------------------
+% Article Class (This is a LaTeX2e document)  ********************
+% ----------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsthm, amssymb}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc} 
+\usepackage{multicol}
+
+%Candelaria's favorite packages
+\usepackage{setspace}	% Set the spacing for the document
+\usepackage{xtab}		% Use for tables
+\usepackage{comment}	% Use for block comments
+\usepackage{rotating}	% Helpful for rotating figures
+\usepackage{lscape}	% Change a page into landscape
+\usepackage{hyperref}
+\hypersetup{colorlinks=false,pdfborder={0 0 0},breaklinks=true}
+\usepackage{graphicx}	% Load a graphic image
+%\usepackage{url}		% Use for formatting URLS (nice for NatBib also)
+\usepackage{booktabs}  	% Use for nice tables/ Works well with ESTOUT
+\usepackage{longtable} 	% Used to break long tables over multiple pages
+\usepackage{caption}
+\usepackage{subcaption} 	% Used to create SubFloats
+\usepackage{listings} 	% Use to enter code blocks, like a fancy verbatim
+
+% ADD COLOR:
+\usepackage{color}
+\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+
+% Packages for the bibliography
+\usepackage[longnamesfirst]{natbib}
+%\usepackage{natbib}
+
+% Set Page Margins
+%\usepackage{fullpage}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Set line and table spacing
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand{\arraystretch}{1.1}
+\setlength\abovedisplayskip{0pt}
+\setlength\belowdisplayskip{0pt}
+
+% Redefine the cite command
+\renewcommand\cite{\citet}
+
+%\setlength{\parindent}{0in}
+
+%\setlength{\leftmargin}{0pt} \setlength{\parskip}{1.1ex} \setlength{\parindent}{1em} \setlength{\itemsep}{0pt} \setlength{\footnotesep}{10pt}
+%\renewcommand{\footnoterule}{\rule{3in}{.3pt}\vspace{-.3pt}}
+
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+%\numberwithin{equation}{section} %Number equations within section
+% ----------------------------------------------------------------
+
+% AUTHOR INFO
+
+
+\title{Problem Set 7\\ Due: TBD}%
+
+% ----------------------------------------------------------------
+
+%%%%%%
+% SHORT CITES
+%%%%%%
+\shortcites{ColEtAl1966}
+
+
+\begin{document}
+
+\begin{center}
+{\huge Problem Set 4: Probability}\\[5pt]
+\end{center}
+
+\section*{Problem 1}
+\begin{enumerate}
+\item If you roll one die, what is the probability of rolling a 4?
+\item If you roll one die, what is the probability of rolling \em at least \em a 4?
+\item If you roll two dice, what is the probability they sum to 4?
+\item If you roll two dice, what is the probability they sum to \em at least \em a 4?
+\end{enumerate}
+
+\section*{Problem 2}
+\begin{enumerate}
+\item If you flip 10 coins, what is the probability that \em exactly \em four of them land on heads?
+\item If you were to flip 10 coins, what is the probability that \em at least \em four of them land on heads?
+\item A box of 12 donuts has three cinnamon sugar, three glazed, three chocolate frosted and three maple (yuck).  If you were to reach into the box and select a donut at random, what would be the probability you select a non-maple donut?
+\item Pretend you are a monster who selects donuts at random, takes a bite and replaces them in the box.  How many donuts can you expect to bite before you taste your first maple donut?
+
+\end{enumerate}
+
+\section*{Bonus}
+Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, ``Do you want to pick door No. 2?" Is it to your advantage to switch your choice?  Explain your reasoning.
+
+\section*{Bonus 2}
+Assume you know nothing about your cohort other than that there are 30 people in it.  What is the probability that you share a birthday with someone in the cohort?  What is the probability that any two people in the cohort share a birthday?
+
+\section*{Super Bonus}
+One hundred people line up to board an airplane. Each has a boarding pass with an assigned seat. However, the first person to board has lost his boarding pass and takes a random seat. After that, each person takes the assigned seat if it is unoccupied, and one of unoccupied seats at random otherwise. What is the probability that the last person to board gets to sit in his assigned seat?
+
+\end{document}
+
