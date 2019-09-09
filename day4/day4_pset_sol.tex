@@ -1,0 +1,174 @@
+% ----------------------------------------------------------------
+% Article Class (This is a LaTeX2e document)  ********************
+% ----------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsthm, amssymb}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc} 
+\usepackage{multicol}
+
+%Candelaria's favorite packages
+\usepackage{setspace}	% Set the spacing for the document
+\usepackage{xtab}		% Use for tables
+\usepackage{comment}	% Use for block comments
+\usepackage{rotating}	% Helpful for rotating figures
+\usepackage{lscape}	% Change a page into landscape
+\usepackage{hyperref}
+\hypersetup{colorlinks=false,pdfborder={0 0 0},breaklinks=true}
+\usepackage{graphicx}	% Load a graphic image
+%\usepackage{url}		% Use for formatting URLS (nice for NatBib also)
+\usepackage{booktabs}  	% Use for nice tables/ Works well with ESTOUT
+\usepackage{longtable} 	% Used to break long tables over multiple pages
+\usepackage{caption}
+\usepackage{subcaption} 	% Used to create SubFloats
+\usepackage{listings} 	% Use to enter code blocks, like a fancy verbatim
+
+% ADD COLOR:
+\usepackage{color}
+\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+
+% Packages for the bibliography
+\usepackage[longnamesfirst]{natbib}
+%\usepackage{natbib}
+
+% Set Page Margins
+%\usepackage{fullpage}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Set line and table spacing
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand{\arraystretch}{1.1}
+\setlength\abovedisplayskip{0pt}
+\setlength\belowdisplayskip{0pt}
+
+% Redefine the cite command
+\renewcommand\cite{\citet}
+
+%\setlength{\parindent}{0in}
+
+%\setlength{\leftmargin}{0pt} \setlength{\parskip}{1.1ex} \setlength{\parindent}{1em} \setlength{\itemsep}{0pt} \setlength{\footnotesep}{10pt}
+%\renewcommand{\footnoterule}{\rule{3in}{.3pt}\vspace{-.3pt}}
+
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+%\numberwithin{equation}{section} %Number equations within section
+% ----------------------------------------------------------------
+
+% AUTHOR INFO
+
+
+\title{Problem Set 7\\ Due: TBD}%
+
+% ----------------------------------------------------------------
+
+%%%%%%
+% SHORT CITES
+%%%%%%
+\shortcites{ColEtAl1966}
+
+
+\begin{document}
+
+\begin{center}
+{\huge Problem Set 4: Probability}\\[5pt]
+\end{center}
+
+\section*{Problem 1}
+\begin{enumerate}
+\item If you roll one die, what is the probability of rolling a 4?
+{\color{red} One out of the six possible outcomes:
+$$ P(4) = \frac{1}{6} $$} 
+\item If you roll one die, what is the probability of rolling \em at least \em a 4?
+{\color{red} Out of the six possible outcomes, either a 4, 5, or 6 will work.
+$$ P(\geq 4) = \frac{3}{6} = \frac{1}{2} $$}
+\item If you roll two dice, what is the probability they sum to 4?
+{\color{red} Rolling two dice has $6 \times 6 = 36$ possible outcomes. Of these, $(1, 3), (3,1),$ and $(2,2)$ will work.
+$$ P(4) = \frac{3}{36} = \frac{1}{12} $$}
+\item If you roll two dice, what is the probability they sum to \em at least \em a 4?
+{\color{red} Of the 36 possible outcomes, we can count the ones that sum to 4 or greater, or recognize that the probabilities of all events must sum to one. So - first we find the probability that you roll a total of 3 or less:
+$$ P(\leq 3) = \frac{3}{36} = \frac{1}{12} $$
+Next, we recognize that:
+$$ P(\geq 4) = 1 - P(\leq 3) $$
+$$ P(\geq 4) = 1 - \frac{1}{12} = \frac{11}{12} $$
+}
+\end{enumerate}
+
+\section*{Problem 2}
+\begin{enumerate}
+\item If you flip 10 coins, what is the probability that \em exactly \em four of them land on heads?
+{\color{red} 
+These are often called ``Bernoulli trials,'' or an experiment repeated with a probability $p$ of success each time. If we consider heads to be our ``success'', $p=\frac{1}{2}$. The probability of observing exactly $k$ successes from $n$ trials is:
+$$P(k) = \frac{n!}{k!(n-k)!}p^k(1-p)^{n-k}$$
+So:
+$$P(k=4) = \frac{10!}{4!(10-4)!}\bigg(\frac{1}{2}\bigg)^4\bigg(1-\frac{1}{2}\bigg)^{10-4}$$
+$$P(k=4) = \frac{1\cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6 \cdot 7 \cdot 8 \cdot 9 \cdot 10}{1 \cdot 2 \cdot 3 \cdot 4 \cdot 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6}\bigg(\frac{1}{2}\bigg)^{10}$$
+$$P(k=4) = \frac{210}{2^{10}} = 0.205 $$}
+
+\item If you were to flip 10 coins, what is the probability that \em at least \em four of them land on heads?
+{\color{red} Similar to Problem 1.4 above, we write:
+$$ P(\geq 4H) = 1 - (P(3H) + P(2H) + P(1H) + P(0H)) $$
+Computing each of the probabilities separately:
+$$ P(3H) = \frac{120}{2^{10}} = 0.117 $$
+$$ P(2H) = \frac{45}{2^{10}} = 0.044 $$
+$$ P(1H) = \frac{10}{2^{10}} = 0.010 $$
+$$ P(\geq 4H) = 1 - (0.117 + 0.044 + 0.001) = 1 - 0.171 = 0.829 $$}
+
+\item A box of 12 donuts has three cinnamon sugar, three glazed, three chocolate frosted and three maple (yuck).  If you were to reach into the box and select a donut at random, what would be the probability you select a non-maple donut?
+{\color{red} $$P(\text{non-maple}) = \frac{9}{12} = \frac{3}{4} $$}
+
+\item Pretend you are a monster who selects donuts at random, takes a bite and replaces them in the box.  How many donuts can you expect to bite before you taste your first maple donut?
+{\color{red} From above, we know the probability of selecting a maple donut each time is $P(\text{maple}) = \frac{1}{4}$. If we consider this a ``success'' (what a terrible thing to consider success), theexpected number of trials until you reach a success is:
+$$ E(\text{maple}) = \frac{1}{P(\text{maple})} = 4 $$}
+
+\end{enumerate}
+
+\section*{Bonus}
+Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, ``Do you want to pick door No. 2?" Is it to your advantage to switch your choice?  Explain your reasoning.
+
+{\color{red} This is a fairly famous question known as the ``Monty Hall Problem.'' The short version is that you should always switch. Consider this, if you don't switch - you have a $\frac{1}{3}$ probability of guessing right on your first try. You might be tempted to think that after he shows you the goat, you now have a $\frac{1}{2}$ chance of winning the car, but this is untrue!
+
+Think about what happens when you choose to switch. If you pick the correct door to start, you will lose when you switch (which occurs with probability $\frac{1}{3}$. If you pick a goat door to start (which occurs with probability $\frac{2}{3}$), if you switch, you'll end up with the car - making your probability of winning $\frac{2}{3}$!
+
+If you don't buy this argument, write out the possibilities and what happens when you do/don't switch. 
+}
+\section*{Bonus 2}
+Assume you know nothing about your cohort other than that there are 30 people in it.  What is the probability that you share a birthday with someone in the cohort?  What is the probability that any two people in the cohort share a birthday?
+
+{\color{red} Here's another famous problem, called the ``Birthday Problem.'' for someone else to have your birthday, let's first make two simplifying assumptions. First, birthdays are uniformly distributed across the calendar year (which is actually untrue). Next, assume that no one is born on a leap year (which is also wrong, but doesn't make much of a difference in the final answer).
+
+Under these assumptions, the probability that someone else in your cohort shares your birthday is $\frac{29}{365} = 0.0795$. When you consider two people in a group sharing a birthday, however, things get a ittle weird.
+
+First, recognize that the probability of two specific people having different birthdays is $\frac{364}{365}$.
+
+Now, in a group of 30 people, we can make $_{30}C_2 = 435$ distinct pairs. So the probability that no two people share a birthday is:
+$$P(\text{no pairs}) = \bigg(\frac{364}{365}\bigg)^{435} = 0.303$$
+Now we see:
+$$P(\text{at least one pair}) = 1 - 0.303 = 0.697 $$
+Which is much higher than you may have expected!}
+
+\section*{Super Bonus}
+One hundred people line up to board an airplane. Each has a boarding pass with an assigned seat. However, the first person to board has lost his boarding pass and takes a random seat. After that, each person takes the assigned seat if it is unoccupied, and one of unoccupied seats at random otherwise. What is the probability that the last person to board gets to sit in his assigned seat?
+
+{\color{red} Another classic puzzle! There are a number of ways to think about this problem, but here's one:
+
+Every time a pasenger's seat is taken, there is an equal chance that they end up in any open seat - this include's the first passenger's seat and the last passenger's seat. As soon as someone ends up in the first passenger's seat, the last passenger will be able to get their own. If someone ends up in the last passenger's seat first, however, that last passenger has no hope of getting to their real seat.
+
+Because at each step, those events are equally likely, the probability the last passenger gets their assigned seat is precisely $\frac{1}{2}$.}
+
+\end{document}
+
